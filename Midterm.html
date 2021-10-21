@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!---------------->
+    <style> @media (max-width: 768px ) {
+        #headerwrap h1 {
+        font-size: 100px;
+        }
+        .colorq{
+            background: url(зебра_печати_зебра_животных.jpg) no-repeat, center ;
+            background-size: 100% 100%;
+            /*margin-top: -36px;*/
+        }  
+        .color1{
+            background-color: rgb(243, 243, 243);
+            
+
+        }
+        .colorCont{
+            background-color: rgba(79, 107, 101, 0.945);
+        }
+        .color2{
+            background-color:rgba(71, 212, 182, 0.945);
+            background-image: linear-gradient(to bottom right, rgba(1, 255, 213, 0.884), rgba(36, 153, 168, 0.884));
+        }
+        .color3{
+            background-color:rgba(71, 212, 182, 0.945);
+            background-image: linear-gradient(to bottom left, rgba(90, 177, 158, 0.945), rgba(79, 107, 101, 0.945));
+        }
+        .navbar_container {
+      display: flex;
+      justify-content: space-between;
+      height: 30px;
+      z-index: 1;
+      width: 100%;
+      max-width: 1300px;
+      padding: 0;
+  }
+
+  .navbar_menu {
+  display: grid;
+  grid-template-columns: auto;
+  margin: 0;
+  width: 100%;
+  position: absolute;
+  top: -1000px;
+  opacity: 0;
+  transform: all 0.5s ease;
+  height: 50vh;
+  z-index: -1;
+  background: #131313;
+  }
+  .navbar_menu.active {
+      background: #141414;
+      top: 100%;
+      opacity: 1;
+      transition: all 0.5s ease;
+      z-index: 99;
+      height: 100vh;
+      font-size: 1.3rem;
+  }
+  #navbar_logo {
+      padding-left: 15px;
+  }
+  .navbar_toggle .bar {
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  background: #fff;
+  }
+  .navbar_item {
+      width: 100%;
+  }
+  .navbar_links {
+  text-align: center;
+  padding: 5rem;
+  width: 100%;
+  display: table;
+  }
+ 
+  #mobile-menu {
+      position: absolute;
+      top: 20%;
+      right: 5%;
+      transform: translate(5%, 20%);
+  }
+  .navbar_btn {
+      padding-bottom: 2rem;
+  }
+    }
+    
+
+    </style>
+
+    <!---------------->
+
+    <style> /*body*/
+        body {
+            
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: 300;
+            font-size: 16px;
+            color: #555;
+            -webkit-font-smoothing: antialiased;
+            -webkit-overflow-scrolling: touch;
+          }
+        
+      </style>
+
+      <!----------->
+
+      <style>
+      .colorq{
+        background: url(зебра_печати_зебра_животных.jpg) no-repeat, center ;
+        background-size: 100% 100%;
+        margin-top: -36px;
+    }  
+    
+    .color1{
+        background-color: rgb(243, 243, 243);
+        padding-top: 60px;
+        padding-bottom: 20px;
+
+    }
+    .colorCont{
+        background-color: rgba(79, 107, 101, 0.945);
+        padding-top: 20px;
+    }
+    .color2{
+        background-color:rgba(71, 212, 182, 0.945);
+        background-image: linear-gradient(to bottom right, rgba(1, 255, 213, 0.884), rgba(36, 153, 168, 0.884));
+        padding-top: 60px;
+        padding-bottom: 20px;
+
+    }
+
+    .color3{
+        background-color:rgba(71, 212, 182, 0.945);
+        background-image: linear-gradient(to bottom left, rgba(90, 177, 158, 0.945), rgba(79, 107, 101, 0.945));
+    }
+
+    </style>
+
+
+<!------------->
+
+    <style> /* Make the image fully responsive */
+        .carousel-inner img {
+          width: 100%;
+         margin-top: -40px;
+        }
+        </style>
+
+<!----------------->
+
+
+<style> /*Мобильная адаптация*/
+    #headerwrap {
+        background-attachment: relative;
+        background-position: center center;
+        min-height: 100px;
+        width: 100%;
+        -webkit-background-size: 100%;
+        -moz-background-size: 100%;
+        -o-background-size: 100%;
+        background-size: 100%;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        }
+
+        #headerwrap h1 {
+        position: relative;
+        color: white;
+        font-size: 180px;
+        font-weight: 300;
+        letter-spacing: 3px;
+        text-shadow: 2px 2px 2px black;
+        }
+
+        #headerwrap h2 {
+        position: relative;
+        color: white;
+        font-size: 40px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        }
+
+        @media (max-width: 768px ) {
+        #headerwrap h1 {
+        font-size: 100px;
+        }
+
+        #headerwrap h2 {
+        font-size: 30px;
+        }
+        }
+
+</style>
+
+<!-------------------------->
+
+<style>/*Навбар2 и кнопка*/
+    .zxc{
+   position: relative;
+   height: 2px;
+  }
+  </style>
+
+  <!------------------------->
+
+
+  <style> /*Карточки, шрифт, размер*/
+    #dg {
+      background: rgba(68, 161, 96, 0.884);
+      background-image: linear-gradient(to top left, rgba(36, 153, 168, 0.884), rgba(56, 231, 108, 0.884));
+      padding-top: 40px;
+      padding-bottom: 20px;
+      text-align: center;
+      margin: 0 auto;
+      width: 90%;
+      border-radius: 10px;
+      box-shadow: 2px 2px 5px rgba(248, 248, 248, 0.582);
+      margin-bottom: 20px;
+    }
+    #dg .fakeimg{
+        box-shadow: 0 0 5px rgba(68, 156, 127, 0.493);
+    }
+
+    #dg1 {
+      background: rgba(84, 196, 112, 0.884);
+      background-image: linear-gradient(to bottom left, rgba(79, 107, 101, 0.945), rgba(56, 231, 108, 0.884));
+      padding-top: 40px;
+      padding-bottom: 20px;
+      text-align: center;
+      margin: 0 auto;
+      width: 90%;
+      border-radius: 10px;
+      box-shadow: 2px 2px 5px rgba(248, 248, 248, 0.582);
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    #dg1 .fakeimg{
+        box-shadow: 0 0 5px rgba(194, 193, 193, 0.493);
+    }
+
+    #dg2 {
+      background: rgba(84, 196, 177, 0.884);
+      background-image: linear-gradient(to top right, rgba(106, 223, 203, 0.884), rgba(36, 153, 168, 0.884));
+      padding-top: 40px;
+      padding-bottom: 20px;
+      text-align: center;
+      margin: 0 auto;
+      width: 90%;
+      border-radius: 10px;
+      box-shadow: 2px 2px 5px rgba(248, 248, 248, 0.582);
+      margin-top: 20px;
+    }
+    #dg2 .fakeimg{
+        box-shadow: 0 0 5px rgba(194, 193, 193, 0.493);
+    }
+
+    #dh {
+      background: rgba(199, 193, 193, 0.781);
+      padding-top: 20px;
+      padding-bottom: 10px;
+      text-align: center;
+      margin: 0 auto;
+      width: 90%;
+      border-radius: 15px;
+      box-shadow: 0 0 5px rgb(46, 46, 46);
+    }
+
+    #dj {
+    background: #fffffff6;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: -60px;
+    margin-bottom: -20px;
+  }
+
+  #dj .fakeimg{
+    box-shadow: 0 0 5px rgba(135, 197, 177, 0.747);
+  }
+
+  #dg5 {
+    background: rgba(88, 194, 167, 0.774);
+    background-image: linear-gradient(to top right, rgba(88, 194, 167, 0.774), rgba(36, 153, 168, 0.884));
+    padding-top: 20px;
+    padding-bottom: 120px;
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  #dg5 .card-title{
+      color: rgb(255, 255, 255);
+      text-shadow: 0 0 2px black;
+  }
+
+  #dg7 {
+    background: white;
+    padding-top: 18px;
+    padding-bottom: 20px;
+    text-align: center;
+    margin: 0 auto;
+    width: 90%;
+  }
+  
+  #dk{
+   /* background: rgba(88, 194, 167, 0.774);
+    background-image: linear-gradient( rgba(36, 153, 168, 0.884), rgba(1, 255, 213, 0.884)); */
+    padding-top: 50px;
+    padding-bottom: 80px;
+    width: 100%;
+  }
+ 
+
+  .vniz1{
+      position: relative;
+      bottom: -6%;
+  }
+
+  .vniz2{
+      position: relative;
+      bottom: -6%;
+  }
+
+  .vniz3{
+      position: center;
+      
+  }
+
+  .verh{
+    margin-top: -6px;
+    padding-top: 10px;
+    padding-bottom: 50px;
+
+  }
+
+  .jumbotron{
+    background-color: rgba(79, 107, 101, 0.945);
+    color: white;
+      
+  }
+
+  #copyrights {
+    background-color: rgba(79, 107, 101, 0.945);
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+  }
+  
+  #copyrights p {
+    margin-bottom: 15px;
+  }
+    </style>
+
+  
+
+</head>
+<body>
+
+    <div id="headerwrap">
+
+    <div id="demo" class="carousel slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="стиль_интерьер_гостиная.jpg" alt="">
+            <div class="carousel-caption">
+              <h3>Interior</h3>
+              <p>Create comfort in your home!</p>
+            </div>   
+          </div>
+          <div class="carousel-item">
+            <img src="комната_гостиная_интерьер.jpg" alt="">
+            <div class="carousel-caption">
+              <h3>Decorations</h3>
+              <p>Arrange your home!</p>
+            </div>   
+          </div>
+          <div class="carousel-item">
+            <img src="интерьер_дизайн_комната.jpg" alt="">
+            <div class="carousel-caption">
+              <h3>House</h3>
+              <p>Your dream is here!</p>
+            </div>   
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+
+    </div>
+
+
+    <!----------------------->
+    <div class="colorCont">
+        <div class="container w">
+        <div class="row centered">
+          <br><br>
+          <div class="col-lg-4">
+            <i class="fa fa-heart"></i>
+            <h4 style="color: white;">DESIGN</h4>
+            <p style="color: white;">We have created millions of options for your design where we can create ideal conditions for ourselves where you yourself would like to live and all this is available thanks to the specialists.</p>
+          </div>
+        
+    
+          <div class="col-lg-4">
+            <i class="fa fa-laptop"></i>
+            <h4 style="color: white;">INTERIOR</h4>
+            <p style="color: white;">Our design will suit everyone from a connoisseur of minimalism to lovers of maximalism. We will cater to all your tastes, so that your eyes always enjoy what you have chosen.</p>
+          </div>
+          
+    
+          <div class="col-lg-4">
+            <i class="fa fa-trophy"></i>
+            <h4 style="color: white;">DECORATION</h4>
+            <p style="color: white;">We care about our clients, so we provide not only the services of our designers, but also other craftsmen who are ready to sew to order what you will not see anywhere else, because it will only be yours.</p>
+          </div>
+          
+        </div>
+        
+        <br>
+        <br>
+      </div>
+
+    </div>
+      <!-- container -->
+
+
+    <div class="zxc">
+        <nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top"> <!--Указываем что полоса дожна быть темной, а шрифт белым-->
+           <a class="navbar-brand">Interior </a> <!--создает имя проекту-->
+           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+             <span class="navbar-toggler-icon"></span>
+           </button>
+           <div class="collapse navbar-collapse" id="collapsibleNavbar"><!--навбар коллапс для группирования-->
+             <ul class="navbar-nav"> <!--для навигация высоты навбаров-->
+               <li class="nav-item"> <!--Родитель нав линка, можно управлять какой будет ссылка-->
+                 <a class="nav-link" href="#">Buy</a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link" href="#">Order</a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link" href="#">Hire</a>
+               </li>    
+             </ul>
+           </div>  
+         </nav>
+       </div>
+
+
+       <!----------------------->
+
+        <br>
+
+        <!--------------------------->
+       <div class="color1">
+
+       
+
+
+        <div id="dg1"> 
+
+          <div class="container" >
+            <div class="row">
+                
+              <div class="col-sm-4">
+                <h2 style="color: rgb(255, 255, 255);">The art of design</h2>
+                <h5>⠀</h5>
+                <h3 style="color: rgb(255, 255, 255);"><p>We invite you to walk along with us a great path, to create something that no one else has seen. After all, hundreds of masters of their craft every day try to do something grand, so walk this path with us.</p></h3>
+                <hr class="d-sm-none">
+                <button type="button" class="btn btn-outline-success bg-light">Details</button>
+              </div>
+              <div class="col-sm-8">
+                <div class="fakeimg"><img src="Гостиная_дизайн_хай-тек.jpg" style= "width: 100%; border-radius: 20px;" alt=""></div>
+              </div>
+          </div>
+        </div>
+    </div>
+
+    <div id="dg"> 
+
+        <div class="container" >
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="fakeimg"><img src="Большой_диван_в_гостиной_комнате.jpg" style= "width: 100%; border-radius: 20px;" alt=""></div>
+                  </div>
+              <div class="col-sm-4">
+                <h2 style="color: rgb(255, 255, 255);">Minimalism with plants</h2>
+                <h5>⠀</h5>
+                <h3 style="color: rgb(255, 255, 255);"><p>What does it mean? We have specially selected plants for you that are ideal for your home. They will not only help your home to look great, but also you. Let your home have its own "little land".</p></h3>
+                <hr class="d-sm-none">
+                <button type="button" class="btn btn-outline-success bg-light">Details</button>
+              </div>
+              
+            </div>
+          </div>
+
+        </div>
+
+        <div id="dg2"> 
+
+          <div class="container" >
+            <div class="row">
+              <div class="col-sm-4">
+                <h2 style="color: rgb(255, 255, 255);">About Us</h2>
+                <h5>⠀</h5>
+                <h3 style="color: rgb(255, 255, 255);"><p>We and many of our specialists are preparing to create the interior of your dreams. We are like wine, the longer you wait, the better the result will be, because our specialists work every day and perhaps they will create the best design in your house.</p></h3>
+                <hr class="d-sm-none">
+                <button type="button" class="btn btn-outline-info bg-light">Details</button>
+              </div>
+              <div class="col-sm-8">
+                <div class="fakeimg"><img src="синее.jpg" style= "width: 100%; border-radius: 20px;" alt=""></div>
+              </div>
+            </div>
+          </div>
+
+
+          </div>
+
+        </div>
+
+
+
+
+        
+
+          <!-------->
+
+
+        <!--OUR WORKS-->
+
+
+
+            <!---------------------->
+        <div class="color2">
+           
+            <div id="dj">
+                <div class="row">
+
+                    <div class="col-sm-4">
+                        <div class="vniz1"> 
+                        <th><p><a href=""><div class="fakeimg"><img src="интерьер_столовая_городская.jpg" width="100%" alt="Пример"></div></a></p></th>
+                        <th><p><a href=""><div class="fakeimg"><img src="интерьер_столик_двери.jpg" width="100%" alt="Пример"></div></a></p></th>
+                        <th><p><a href=""><div class="fakeimg"><img src="стиль_интерьер_гостиная.jpg" width="100%" alt="Пример"></div></a></p></th>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class = "vniz3">
+                        <th><p><a href=""><div class="fakeimg"><img src="интерьер_дизайн_жилая_комната_стиль.jpg" width="100%" alt="Пример"></div></a></p></th>
+                        <th><p><a href=""><div class="fakeimg"><img src="G&Z.png" width="100%"  alt="Пример"></div></a></p></th>
+                        <th><p><a href=""><div class="fakeimg"><img src="living_room_department.jpg" width="100%" alt="Пример"></div></a></p></th>
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-4">
+                        <div class="vniz2">
+                        <th><p><a href=""><div class="fakeimg"><img src="растения_полка_тарелки_горшки.jpg" width="100%" alt="Пример"></div></a></p></th>
+                        <th><p><a href=""><div class="fakeimg"><img src="интерьер_жилая_комната_дом.jpg" width="100%" alt="Пример"></div></a></p></th>
+                        <th><p><a href=""><div class="fakeimg"><img src="rug_chair_интерьер_ковер.jpg" width="100%" alt="Пример"></div></a></p></th>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+          <!---------------------->
+
+        
+
+        
+<!---------------------->
+
+          
+<div class="container-fluid">
+  <br>
+  <br>
+
+  <h4 style="font-size: 85px; color: rgb(58, 156, 140); text-align: left;">Style  </h4>
+</div >
+<div id="dk">
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3" >
+      <div class="fakeimg"><img src="максимализм.jpg" style= "width: 100%;" alt=""></div>
+    </div>
+    <div class="col-sm-3" style="background-color:rgba(90, 175, 158, 0.616);">
+      <h3 style="color: white;"> <b> Maximalism </b></h3>
+      <br>
+      <h4 style="color: white;">More details for connoisseurs of old classics, because much does not mean bad, so enjoy every thing of yours, which will give the room an atmosphere. Everything around you will be arranged...</h4>
+      <button type="button" class="btn btn-outline-success bg-light">More details</button>
+      <br>
+    </div>
+
+    <div class="col-sm-3" >
+      <div class="fakeimg"><img src="Минимализм.jpg" style= "width: 100%;" alt=""></div>
+    </div>
+    <div class="col-sm-3" style="background-color:rgba(90, 175, 158, 0.616);">
+      <h3 style="color: white;"> <b> Minimalism </b></h3>
+      <br>
+      <h4 style="color: white;">Everything will stand where it should, every thing will stand as perfect as possible, there will be so few things that it will seem that you live in an empty house, and the lover empty house, of maximalism...</h4>
+      <button type="button" class="btn btn-outline-info bg-light">More details</button>
+      <br>
+    </div>
+  </div>
+</div>
+</div>
+
+<!------------------------->
+
+<div id="dg7">
+  <div class="row" style="text-align: center;">
+
+    <div class="col-sm-4">
+         
+        <th><p><a href=""><div class="fakeimg"><img src="интерьер_столовая_городская.jpg" width="100%" alt="Пример"></div></a></p></th>
+        <th><p><a><h2>Apartment design</h2></a></p></th>
+        <h3>Beautiful design of your dream apartment</h3>
+        <h1>2000$⠀<button type="button" class="btn btn-outline-light btn-lg bg-dark">Order</button></h1>
+        
+    </div>
+
+    <div class="col-sm-4">
+        
+        <th><p><a href=""><div class="fakeimg"><img src="интерьер_дизайн_жилая_комната_стиль.jpg" width="100%" alt="Пример"></div></a></p></th>
+        <th><p><a><h2>Home design</h2></a></p></th>
+        <h3>Beautiful design of your dream home</h3>
+        <h1>20000$⠀<button type="button" class="btn btn-outline-light btn-lg bg-dark">Order</button></h1>
+    </div>
+        
+    
+
+
+    <div class="col-sm-4">
+        
+        <th><p><a href=""><div class="fakeimg"><img src="растения_полка_тарелки_горшки.jpg" width="100%" alt="Пример"></div></a></p></th>
+        <th><p><a><h2>Unique design</h2></a></p></th>
+        <h3>We will create a dream design for you</h3>
+        <h1>6990$⠀<button type="button" class="btn btn-outline-light btn-lg bg-dark">Order</button></h1>
+
+    </div>
+  </div>
+  </div>
+
+  
+
+</div>
+
+<hr>
+  <!---------------------->
+
+  <div class="verh">
+
+    <h4 style="font-size: 85px; color: rgba(79, 107, 101, 0.945); text-align: center;">Creators</h4>
+  <br>
+
+    <div class="container mt-3">
+      <h2>G&Z founders</h2>
+      <p><h3> These people laid the foundation for our future with you! </h3></p><br>
+      <!-- Media top -->
+      <div class="media border p-3">
+          <div class="media-body">
+            <h4>Assanov Gabit <small><i>Born in: 2047.23.66</i></small></h4>
+            <p><code>Student | Designer| Creator|</code> What can you say about him, he was born too early, because his ideas are not given to understand.</p>      
+          </div>
+          <img src="Папич.jpg" alt="John Doe" class="ml-3 mt-3 rounded-circle" style="width:90px;">
+        </div>
+    
+      <!-- Media middle -->
+      <div class="media border p-3">
+          <div class="media-body">
+            <h4>Kaniev Zh. <small><i>Born in: 2003.08.02</i></small></h4>
+            <p><code>Student | Gamer| Psychologist|</code>What can we say about him, he lives in the same century with the great creator <code>Assanov Gabit</code></p>      
+          </div>
+          <img src="Айтипедия" alt="John Doe" class="ml-3 mt-3 rounded-circle" style="width:90px;">
+        </div>
+    
+      <!-- Media bottom -->
+      <div class="media border p-3">
+          <div class="media-body">
+            <h4>Energetics <small><i>Born in: 2021.03.07</i></small></h4>
+            <p>Repeatedly saved from sleepless nights, he is our friend and enemy at the same time. Thanks to him, I made the past labs.</p>      
+          </div>
+          <img src="habib1.jpg" alt="John Doe" class="ml-3 mt-3 rounded-circle" style="width:90px;">
+        </div>
+
+    </div>
+  
+  </div>
+          <!-------->
+
+        <div class="color3">
+
+          <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-4">
+                    <br>
+                    <br>
+            <h1 style="color: white;">We are here for you. <h2 style="color: white;">Good Work!</h2></h1>
+            <p style="color: white;">Register to get started or join someone else's work to gain experience!  </p>
+            <p></p>
+            <form action="/action_page.php" class="needs-validation" novalidate>
+              <div class="form-group">
+                <label for="uname" style="color: white;">Username:</label>
+                <input type="text" class="form-control" id="uname" placeholder="qwerty123@gmail.com" name="uname" required>
+                <div class="valid-feedback" style="color: white;">Valid.</div>
+                <div class="invalid-feedback" style="color: white;">Please fill out this field.</div>
+              </div>
+              <div class="form-group">
+                <label for="pwd"style="color: white;">Password:</label>
+                <input type="password" class="form-control" id="pwd" placeholder="**************" name="pswd" required>
+                <div class="valid-feedback" style="color: white;">Valid.</div>
+                <div class="invalid-feedback" style="color: white;">Please fill out this field.</div>
+              </div>
+              <div class="form-group form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input"  type="checkbox" name="remember" required> <p style="color: white;">I agree on blabla.</p>
+                  <div class="valid-feedback" style="color: white;">Valid.</div>
+                  <div class="invalid-feedback" style="color: white;">Check this checkbox to continue.</div>
+                </label>
+              </div>
+              <button type="submit" class="btn btn-outline-light bg-body" style="color: white;">Join</button>
+              <br>
+              <br>
+              
+            </form>
+          </div>
+          
+        
+    
+
+    <div class="col-sm-8">
+        <div class="fakeimg"><img src="лестница_стены_интерьер.jpg" style= "position: relative; width: 100%; left: 1.6%;" alt=""></div>
+      </div>
+    </div>
+</div>
+</div>
+          
+<script>
+    // Disable form submissions if there are invalid fields
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Get the forms we want to add validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+    </script>
+
+
+        <!---------------->
+
+       
+            <!-------------------->
+
+
+
+
+          
+     
+            <!---------------------------->
+
+            <div class="footer">
+                <div class="jumbotron text-center" style="margin-bottom: 0px;"> <!--джумботрон создает поле как тэйбл, но она стоит как фон-->
+                    <div class="row">
+                    <div class="col-sm-4"> <!--уровень колонны, меняя зачение на 5 или 3 колонны изменят свое местоположеение-->
+                        <h3>Contact us</h3>
+                        <p>Administrator</p>
+                        <p>Moderator</p>
+                        <p></p>
+                      </div>
+                      <div class="col-sm-4">
+                        <h3>Legal information</h3>
+                        <p>Document</p>
+                        <p>License</p>
+                      </div>
+                      <div class="col-sm-4">
+                        <h3>Cooperation proposals</h3>
+                        <p>Mobile number</p>        
+                        <p>Mail</p>
+                      </div>
+                    </div>
+                </div>
+                <div id="copyrights">
+                    <div class="container">
+                      <p>@MadeInGabitAssanov </p>
+                      </div>
+                    </div>
+            </div>
+        
+            
+
+
+            
+          
+
+</body>
+</html>
